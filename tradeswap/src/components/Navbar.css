@@ -1,0 +1,79 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #FF6347;
+    position: sticky;
+    top: 0;
+    z-index: 1000;  /* Ensures navbar stays above other content */
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    color: white;
+}
+
+.navbar-links, .mobile-navbar-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-links a, .mobile-navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover, .mobile-navbar-links a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.mobile-navbar-links {
+    position: fixed;
+    top: 70px;
+    right: -250px; /* Initially hidden */
+    height: 100%;
+    width: 200px;
+    background-color: #FF6347;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    transition: right 0.3s;
+    outline: 0.75px solid black;
+}
+.mobile-navbar-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+.icon {
+    margin-right: 15px;
+}
+
+.mobile-navbar-links.open {
+    right: 0;
+}
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+        color: white;
+    }
+}

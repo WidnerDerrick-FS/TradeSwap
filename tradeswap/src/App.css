@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; /* Keeping the font consistent */
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f4f4f4; /* Slight grey background for the main content */
+  padding: 2rem; /* Some padding to give the content space */
+}
+
+/* Resetting link styling */
+a {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+/* Adding some generic styles for responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
