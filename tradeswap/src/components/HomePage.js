@@ -15,13 +15,18 @@ import {
     faEye, 
     faExchangeAlt, 
     faComments, 
-    faHandshake 
+    faHandshake,
+    faMobileAlt,
+    faNewspaper,
+    faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 // React Slick
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
     // Slider settings
@@ -32,8 +37,73 @@ function HomePage() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000   // Slide changes every 2 seconds. Adjust as needed.
+        autoplaySpeed: 3500   // Slide changes every 2 seconds. Adjust as needed.
     };
+    const latestNews = [
+        {
+            id: uuidv4(),
+            title: "Grand Opening",
+            content: "We're excited to announce the launch of TradeSwap! Join us on our mission to revolutionize the way you trade items online.",
+        },
+        {
+            id: uuidv4(),
+            title: "Launch Giveaway",
+            content: "To celebrate our grand opening, we're giving away free Barter Points to the first 100 users who sign up and complete a trade!",
+        },
+        {
+            id: uuidv4(),
+            title: "Looking for Feedback",
+            content: "As a new platform, your feedback is invaluable. Use the feedback button to let us know your thoughts and help us improve.",
+        },
+        {
+            id: uuidv4(),
+            title: "First 1000 Trades Insured",
+            content: "To ensure a smooth start, we're offering insurance on the first 1000 approved trades made through our platform. Trade with confidence!",
+        },
+        {
+            id: uuidv4(),
+            title: "Join Our Community",
+            content: "Our community is growing! Join our forums and social media groups to connect with other traders, share tips, and get exclusive updates.",
+        },
+        // ... Add more news articles as needed ...
+    ];
+    const faqs = [
+        {
+            id: uuidv4(),
+            question: "How does TradeSwap ensure the quality of listed items?",
+            answer: "We have a dedicated team reviewing each listing to maintain high standards and to ensure the descriptions match the item's condition.",
+        },
+        {
+            id: uuidv4(),
+            question: "What can I do if a trade doesn't go as planned?",
+            answer: "Contact our support team immediately. We offer mediation services to resolve disputes and protect our users.",
+        },
+        {
+            id: uuidv4(),
+            question: "Is there a fee to use TradeSwap?",
+            answer: "Signing up and listing items is completely free. We only charge a small transaction fee once a successful trade is completed.",
+        },
+        {
+            id: uuidv4(),
+            question: "How do I earn and use Barter Points?",
+            answer: "You earn Barter Points with every successful trade. Points can be used for discounts on transaction fees or exclusive offers.",
+        },
+        {
+            id: uuidv4(),
+            question: "Can I trade anything on TradeSwap?",
+            answer: "Almost anything can be traded on TradeSwap, as long as it's legal and conforms to our community guidelines.",
+        },
+        {
+            id: uuidv4(),
+            question: "How are disputes between traders handled?",
+            answer: "We have a resolution center to facilitate discussions between parties. If needed, TradeSwap will step in to mediate and find a fair resolution.",
+        },
+        {
+            id: uuidv4(),
+            question: "What measures are in place to protect user privacy?",
+            answer: "User privacy is a top priority. We use strong encryption and do not share personal information with third parties without consent.",
+        },
+    ];
 
     return (
         <div className="home-container">
@@ -41,7 +111,7 @@ function HomePage() {
             {/* Main Banner */}
             <div className="banner">
                 <h1>Welcome to TradeSwap</h1>
-                <p>The best platform for exchanging items.</p>
+                <p>The best platform for exchanging items. Physical or Digital!</p>
             </div>
 
             <div className="why-choose-us">
@@ -120,14 +190,46 @@ function HomePage() {
             <h3>Step 6: Swap & Review</h3>
             <p>Once both parties are satisfied, finalize the swap. After the trade, leave a review to share your experience.</p>
         </div>
-    </Slider>
-</div>
+            </Slider>
+        </div>
+          {/* Mobile App Promotion Section */}
+          <div className="mobile-app-promotion-section">
+                <h2>TradeSwap Mobile App - Coming Soon!</h2>
+                <p>Experience the easiest way to swap items on the go. Our mobile app is on its way - keep an eye out for updates!</p>
+                <FontAwesomeIcon icon={faMobileAlt} size="3x" />
+            </div>
+
+             {/* Latest News Section as a Slider */}
+             <div className="latest-news-section">
+                <h2>Latest News <FontAwesomeIcon icon={faNewspaper} size="XL" /></h2>
+                <Slider {...sliderSettings}>
+                    {latestNews.map(news => (
+                        <div key={news.id} className="news-article">
+                            <h3>{news.title}</h3>
+                            <p>{news.content}</p>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
+
+             {/* Expanded FAQ Section */}
+             <div className="faq-section">
+                <h2>Frequently Asked Questions <FontAwesomeIcon icon={faQuestionCircle} size="XL" /></h2>
+                {faqs.map(faq => (
+                    <div key={faq.id} className="faq">
+                        <h3>{faq.question}</h3>
+                        <p>{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+
 
 
             {/* Call to Action Banner */}
             <div className="banner">
                 <h1>Get Started Now!</h1>
                 <p>Join our community and start swapping items.</p>
+                <Link to="/signup" className="signup-button">Sign Up</Link>
             </div>
 
         </div>

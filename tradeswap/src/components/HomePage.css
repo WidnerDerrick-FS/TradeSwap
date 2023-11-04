@@ -104,8 +104,108 @@
     color: grey;
     flex: 1; /* allows it to take remaining space, pushing other content to the sides */
 }
+/* Existing styles */
+
+/* ... Your existing CSS ... */
+
+/* Mobile App Promotion Section */
+.mobile-app-promotion-section {
+    background-color: #f7f7f7; /* Light grey background */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.mobile-app-promotion-section h2 {
+    font-size: 2rem; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+/* Latest News Section */
+.latest-news-section {
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.latest-news-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-article {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-article h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.signup-button {
+    padding: 10px 25px;
+    font-size: 1em; /* Adjust to match your design */
+    background-color: #4CAF50; /* Example color, change as needed */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Allows the button to be sized by its content */
+    margin-top: 20px; /* Spacing from the text above, adjust as needed */
+}
+.signup-button:hover {
+    background-color: #45a049; /* Darker shade on hover, adjust as needed */
+}
+
+/* Ensure the button is not too wide on small devices */
+.signup-button {
+    max-width: 100%; /* Ensures button width does not exceed its container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
 
 /* For mobile responsiveness */
+
+/* Larger devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .signup-button {
+        padding: 12px 30px;
+        font-size: 1.2em; /* Larger text on bigger screens */
+    }
+}
 @media (max-width: 768px) {
     .features {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
@@ -123,5 +223,18 @@
 
     .step h3, .step p, .trade-item h3, .trade-item p {
         margin-left: 0;
+    }
+    .mobile-app-promotion-section, .latest-news-section, .faq-section {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    /* Stack news articles and FAQs in a column on mobile */
+    .news-article, .faq {
+        margin-bottom: 10px; /* Reduce margin on mobile */
+    }
+    .signup-button {
+        padding: 11px 28px;
+        font-size: 1.1em; /* Slightly larger text on medium screens */
     }
 }
