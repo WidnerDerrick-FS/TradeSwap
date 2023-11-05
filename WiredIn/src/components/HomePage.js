@@ -235,7 +235,7 @@ function HomePage() {
             <div className="banner">
                 <h1>Get Started Now!</h1>
                 <p>Join our community and start swapping items.</p>
-                <Link to="/signup" className="signup-button">Sign Up</Link>
+                <Link to="/signup" className="signup-button">Sign Up <FontAwesomeIcon icon={faArrowRight} size="XL" /></Link>
             </div>
 
         </div>
