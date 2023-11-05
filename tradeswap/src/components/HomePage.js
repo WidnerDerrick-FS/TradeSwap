@@ -4,21 +4,22 @@ import './HomePage.css';
 // Font Awesome Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-    faShippingFast, 
-    faShieldAlt, 
-    faThumbsUp, 
-    faPhone, 
-    faUserClock, 
-    faUsers,
-    faUserPlus, 
-    faList, 
-    faEye, 
-    faExchangeAlt, 
-    faComments, 
-    faHandshake,
+    faSearchDollar, 
+    faBriefcase, 
+    faUserTie, 
+    faLaptopCode, 
+    faPeopleCarry, 
+    faCommentsDollar, 
+    faTasks, 
+    faSearch,
     faMobileAlt,
     faNewspaper,
-    faQuestionCircle
+    faQuestionCircle,
+    faUserPlus,
+    faFileContract,
+    faDollarSign,
+    faComments,
+    faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 
 // React Slick
@@ -37,167 +38,174 @@ function HomePage() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3500   // Slide changes every 2 seconds. Adjust as needed.
+        autoplaySpeed: 3500
     };
     const latestNews = [
         {
             id: uuidv4(),
-            title: "Grand Opening",
-            content: "We're excited to announce the launch of TradeSwap! Join us on our mission to revolutionize the way you trade items online.",
+            title: "Welcome to WiredIn!",
+            content: "We're thrilled to unveil WiredIn – your new go-to hub for freelancing excellence. Let's get to work!",
         },
         {
             id: uuidv4(),
-            title: "Launch Giveaway",
-            content: "To celebrate our grand opening, we're giving away free Barter Points to the first 100 users who sign up and complete a trade!",
+            title: "Early Bird Perks 🚀",
+            content: "The first 100 freelancers to join us will receive exclusive benefits and early access to premium features. Spread the word!",
         },
         {
             id: uuidv4(),
-            title: "Looking for Feedback",
-            content: "As a new platform, your feedback is invaluable. Use the feedback button to let us know your thoughts and help us improve.",
+            title: "Your Opinion Matters",
+            content: "We're wired into your needs! Use the feedback button to share your thoughts and help us create the ultimate freelancing toolkit.",
         },
         {
             id: uuidv4(),
-            title: "First 1000 Trades Insured",
-            content: "To ensure a smooth start, we're offering insurance on the first 1000 approved trades made through our platform. Trade with confidence!",
+            title: "Insured First Projects",
+            content: "Jump in with confidence – your first projects on WiredIn come with our insurance guarantee. We've got your back!",
         },
         {
             id: uuidv4(),
-            title: "Join Our Community",
-            content: "Our community is growing! Join our forums and social media groups to connect with other traders, share tips, and get exclusive updates.",
+            title: "Join the Community",
+            content: "Connect, collaborate, and create with fellow freelancers on our forums and social media channels. Welcome home!",
         },
-        // ... Add more news articles as needed ...
     ];
+    
     const faqs = [
         {
             id: uuidv4(),
-            question: "How does TradeSwap ensure the quality of listed items?",
-            answer: "We have a dedicated team reviewing each listing to maintain high standards and to ensure the descriptions match the item's condition.",
+            question: "How does WiredIn ensure fair opportunities?",
+            answer: "We're dedicated to a balanced marketplace – with algorithm checks and community oversight, everyone gets their shot.",
         },
         {
             id: uuidv4(),
-            question: "What can I do if a trade doesn't go as planned?",
-            answer: "Contact our support team immediately. We offer mediation services to resolve disputes and protect our users.",
+            question: "Need help with a project hiccup?",
+            answer: "Our support team is on standby to assist with any issues, ensuring smooth sailing from start to finish.",
         },
         {
             id: uuidv4(),
-            question: "Is there a fee to use TradeSwap?",
-            answer: "Signing up and listing items is completely free. We only charge a small transaction fee once a successful trade is completed.",
+            question: "What are WiredIn's fees?",
+            answer: "Joining is free, and we only charge a transparent service fee on completed projects. More work means more rewards.",
         },
         {
             id: uuidv4(),
-            question: "How do I earn and use Barter Points?",
-            answer: "You earn Barter Points with every successful trade. Points can be used for discounts on transaction fees or exclusive offers.",
+            question: "How do I benefit from the WiredIn network?",
+            answer: "Expand your professional network, collaborate on projects, and grow your freelance business with our suite of tools and resources.",
         },
         {
             id: uuidv4(),
-            question: "Can I trade anything on TradeSwap?",
-            answer: "Almost anything can be traded on TradeSwap, as long as it's legal and conforms to our community guidelines.",
+            question: "What types of projects can I find or post on WiredIn?",
+            answer: "From web design to copywriting, WiredIn is a bustling marketplace for a wide range of professional services.",
         },
         {
             id: uuidv4(),
-            question: "How are disputes between traders handled?",
-            answer: "We have a resolution center to facilitate discussions between parties. If needed, TradeSwap will step in to mediate and find a fair resolution.",
+            question: "How does WiredIn handle disputes?",
+            answer: "Our dispute resolution process is fair and fast, ensuring that both clients and freelancers are heard and a resolution is reached swiftly.",
         },
         {
             id: uuidv4(),
-            question: "What measures are in place to protect user privacy?",
-            answer: "User privacy is a top priority. We use strong encryption and do not share personal information with third parties without consent.",
+            question: "What about confidentiality and data protection?",
+            answer: "WiredIn takes privacy seriously, employing stringent security measures to safeguard all user data.",
         },
     ];
+    
 
     return (
         <div className="home-container">
 
             {/* Main Banner */}
             <div className="banner">
-                <h1>Welcome to TradeSwap</h1>
-                <p>The best platform for exchanging items. Physical or Digital!</p>
+                <h1>Welcome to WiredIn</h1>
+                <p>Connect with top talent and find freelance work opportunities!</p>
+                {/* Add a call-to-action Link component for signup */}
+                <Link to="/signup" className="signup-button">Sign Up Now! <FontAwesomeIcon icon={faArrowRight} size="XL" /></Link>
             </div>
+
 
             <div className="why-choose-us">
                 <h2>Why Choose Us?</h2>
                 <div className="features">
                     <div className="feature">
-                        <FontAwesomeIcon icon={faShippingFast} size="3x" />
-                        <p>Fast Trades</p>
+                        <FontAwesomeIcon icon={faSearchDollar} size="3x" />
+                        <p>Competitive Rates</p>
                     </div>
                     <div className="feature">
-                        <FontAwesomeIcon icon={faShieldAlt} size="3x" />
-                        <p>Secure Exchanges</p>
+                        <FontAwesomeIcon icon={faBriefcase} size="3x" />
+                        <p>Diverse Opportunities</p>
                     </div>
                     <div className="feature">
-                        <FontAwesomeIcon icon={faThumbsUp} size="3x" />
-                        <p>Trusted By Many</p>
+                        <FontAwesomeIcon icon={faUserTie} size="3x" />
+                        <p>Professional Network</p>
                     </div>
                     <div className="feature">
-                        <FontAwesomeIcon icon={faPhone} size="3x" />
-                        <p>24/7 Support</p>
+                        <FontAwesomeIcon icon={faLaptopCode} size="3x" />
+                        <p>Remote Work</p>
                     </div>
                     <div className="feature">
-                        <FontAwesomeIcon icon={faUserClock} size="3x" />
-                        <p>User-Friendly</p>
+                        <FontAwesomeIcon icon={faPeopleCarry} size="3x" />
+                        <p>Collaborative Environment</p>
                     </div>
                     <div className="feature">
-                        <FontAwesomeIcon icon={faUsers} size="3x" />
-                        <p>Active Community</p>
+                        <FontAwesomeIcon icon={faCommentsDollar} size="3x" />
+                        <p>Negotiable Terms</p>
                     </div>
                 </div>
             </div>
 
-            {/* How It Works Section */}
+           {/* How It Works Section */}
 <div className="how-it-works-section">
-    <h2>How TradeSwap Works:</h2>
+    <h2>How It Works:</h2>
 
     <Slider {...sliderSettings}>
         {/* Step 1 */}
         <div className="step">
             <FontAwesomeIcon icon={faUserPlus} size="3x" />
-            <h3>Step 1: Register & Profile Setup</h3>
-            <p>Join TradeSwap by signing up with your details. Customize your profile, set preferences, and get ready to start trading!</p>
+            <h3>Step 1: Sign Up & Profile Creation</h3>
+            <p>Create your WiredIn account and set up a profile showcasing your skills and experience. This is your first step to connecting with clients!</p>
         </div>
 
         {/* Step 2 */}
         <div className="step">
-            <FontAwesomeIcon icon={faList} size="3x" />
-            <h3>Step 2: List Items</h3>
-            <p>Add the items you want to swap. Provide clear photos, describe the item's condition, and set your swapping preferences.</p>
+            <FontAwesomeIcon icon={faSearch} size="3x" />
+            <h3>Step 2: Browse Projects</h3>
+            <p>Look through the project listings to find work that suits your expertise. Filter searches to narrow down potential jobs.</p>
         </div>
 
         {/* Step 3 */}
         <div className="step">
-            <FontAwesomeIcon icon={faEye} size="3x" />
-            <h3>Step 3: Discover & Browse</h3>
-            <p>Explore the vast array of items listed by other users. Use filters to narrow down your search and find the perfect match.</p>
+            <FontAwesomeIcon icon={faFileContract} size="3x" />
+            <h3>Step 3: Send Proposals</h3>
+            <p>Found a project you're interested in? Craft a compelling proposal to pitch your services to potential clients.</p>
         </div>
 
         {/* Step 4 */}
         <div className="step">
-            <FontAwesomeIcon icon={faExchangeAlt} size="3x" />
-            <h3>Step 4: Propose a Swap</h3>
-            <p>Found something interesting? Propose a swap to the item owner, suggesting your items in exchange.</p>
+            <FontAwesomeIcon icon={faComments} size="3x" />
+            <h3>Step 4: Negotiate Terms</h3>
+            <p>Once your proposal is accepted, discuss project details, timelines, and terms before starting the work.</p>
         </div>
 
         {/* Step 5 */}
         <div className="step">
-            <FontAwesomeIcon icon={faComments} size="3x" />
-            <h3>Step 5: Secure Communication</h3>
-            <p>Chat securely with the other user. Discuss and finalize swap details, ensuring a safe and agreeable trade.</p>
+            <FontAwesomeIcon icon={faTasks} size="3x" />
+            <h3>Step 5: Work on Projects</h3>
+            <p>Start working on the projects. WiredIn provides tools to help you manage tasks and communicate with clients seamlessly.</p>
         </div>
 
         {/* Step 6 */}
         <div className="step">
-            <FontAwesomeIcon icon={faHandshake} size="3x" />
-            <h3>Step 6: Swap & Review</h3>
-            <p>Once both parties are satisfied, finalize the swap. After the trade, leave a review to share your experience.</p>
+            <FontAwesomeIcon icon={faDollarSign} size="3x" />
+            <h3>Step 6: Get Paid & Leave Feedback</h3>
+            <p>After completing the work, receive payment through our secure platform. Leave feedback for the client and build your reputation!</p>
         </div>
-            </Slider>
-        </div>
-          {/* Mobile App Promotion Section */}
-          <div className="mobile-app-promotion-section">
-                <h2>TradeSwap Mobile App - Coming Soon!</h2>
-                <p>Experience the easiest way to swap items on the go. Our mobile app is on its way - keep an eye out for updates!</p>
+    </Slider>
+</div>
+
+
+           {/* Mobile App Promotion Section */}
+            <div className="mobile-app-promotion-section">
+                <h2>WiredIn Mobile App - Coming Soon!</h2>
+                <p>Manage your freelance gigs on the go. Our mobile app will make it easy to connect, collaborate, and complete projects anywhere, anytime. Stay tuned for the release!</p>
                 <FontAwesomeIcon icon={faMobileAlt} size="3x" />
             </div>
+
 
              {/* Latest News Section as a Slider */}
              <div className="latest-news-section">
@@ -222,8 +230,6 @@ function HomePage() {
                     </div>
                 ))}
             </div>
-
-
 
             {/* Call to Action Banner */}
             <div className="banner">

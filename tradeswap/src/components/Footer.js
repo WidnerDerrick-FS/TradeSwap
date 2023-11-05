@@ -7,7 +7,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-brand">
-                    TradeSwap
+                    WiredIn
                 </div>
                 <div className="footer-links">
                     <Link to="/terms" className="footer-link">Terms & Conditions</Link>
@@ -15,7 +15,7 @@ function Footer() {
                     <Link to="/contact" className="footer-link">Contact Us</Link>
                 </div>
                 <div className="footer-info">
-                    © {new Date().getFullYear()} TradeSwap. All rights reserved.
+                    © {new Date().getFullYear()} WiredIn. All rights reserved.
                 </div>
             </div>
         </footer>
