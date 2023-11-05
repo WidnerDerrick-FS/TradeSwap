@@ -4,6 +4,7 @@
     align-items: center;
     padding: 1rem 2rem;
     background-color: #0052cc; /* Primary Color: Deep Blue */
+    color: white;
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensures navbar stays above other content */
@@ -11,7 +12,6 @@
 
 .navbar-brand {
     font-size: 2rem;
-    color: white;
 }
 
 .navbar-links, .mobile-navbar-links {
@@ -23,6 +23,7 @@
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
+    border-radius: 15px;
     transition: background-color 0.3s;
 }
 
@@ -30,12 +31,26 @@
     background-color: #4CAF50; /* Secondary Color: Vibrant Green for hover effect */
 }
 
+.signup-btn {
+    background-color: #f7c601; /* Bright Yellow for the Sign Up button */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px; /* Rounded corners for the button */
+    font-weight: bold; /* Makes the text bold */
+    transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+    background-color: #d1a700 !important; /* Darker shade of yellow for hover effect */
+    color: #fff; /* Text color changes on hover */
+}
+
 .hamburger-menu {
     display: none;
     cursor: pointer;
     font-size: 2rem;
-    background-color: #0052cc;
     color: white;
+    background-color: transparent; /* Changed to transparent */
     outline: none;
     border: none;
 }
@@ -43,36 +58,23 @@
 .mobile-navbar-links {
     position: fixed;
     top: 73px;
+    outline: 1px solid black;
     right: -250px; /* Initially hidden */
     height: 100%;
     width: 250px; /* Adjusted to provide more space */
+    padding-top: 15px;
     background-color: #0052cc; /* Consistent with the primary color */
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     transition: right 0.3s;
-    outline: 0.75px solid black; /* Consider changing or removing the outline if it doesn't fit the design */
-}
-
-/* Adjusting the mobile link styles for better visibility and consistency */
-.mobile-navbar-links a {
-    display: block; /* Changed from flex to block for full-width links */
-    width: 100%; /* Makes the entire area clickable */
-    text-align: center; /* Centers the text */
-    padding: 1rem; /* More padding for touch targets */
-    border-bottom: 1px solid #ffffff33; /* Adds a subtle separator */
-}
-
-.icon {
-    margin-right: 15px;
 }
 
 .mobile-navbar-links.open {
     right: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
     .navbar-links {
         display: none;
     }

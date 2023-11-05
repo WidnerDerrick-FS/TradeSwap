@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUserCircle, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faUserCircle,
+  faBriefcase,
+  faProjectDiagram,
+  faTools,
+  faEnvelope,
+  faQuestionCircle,
+  faUserPlus
+} from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
 function Navbar() {
@@ -22,10 +31,30 @@ function Navbar() {
 
             {/* Desktop Links */}
             <div className="navbar-links">
-                <Link to="/" onClick={closeMobileMenu}>Home</Link>
-                <Link to="/services" onClick={closeMobileMenu}>Services</Link>
-                <Link to="/about" onClick={closeMobileMenu}>About</Link>
-                {/* Add other links as needed */}
+                <Link to="/" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faHome} /> Home
+                </Link>
+                <Link to="/explore" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faBriefcase} /> Explore Services
+                </Link>
+                <Link to="/post-project" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faProjectDiagram} /> Post a Project
+                </Link>
+                <Link to="/resources" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faTools} /> Resources for Freelancers
+                </Link>
+                <Link to="/messages" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faEnvelope} /> Messages
+                </Link>
+                <Link to="/about" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faUserCircle} /> About
+                </Link>
+                <Link to="/help" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faQuestionCircle} /> Help
+                </Link>
+                <Link to="/signup" className="signup-btn" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faUserPlus} /> Sign Up
+                </Link>
             </div>
 
             {/* Mobile Menu Icon */}
@@ -43,13 +72,27 @@ function Navbar() {
                 <Link to="/" onClick={closeMobileMenu}>
                     <FontAwesomeIcon icon={faHome} className="icon" /> Home
                 </Link>
-                <Link to="/services" onClick={closeMobileMenu}>
-                    <FontAwesomeIcon icon={faBriefcase} className="icon" /> Services
+                <Link to="/explore" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faBriefcase} className="icon" /> Explore Services
+                </Link>
+                <Link to="/post-project" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faProjectDiagram} className="icon" /> Post a Project
+                </Link>
+                <Link to="/resources" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faTools} className="icon" /> Resources for Freelancers
+                </Link>
+                <Link to="/messages" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faEnvelope} className="icon" /> Messages
                 </Link>
                 <Link to="/about" onClick={closeMobileMenu}>
                     <FontAwesomeIcon icon={faUserCircle} className="icon" /> About
                 </Link>
-                {/* Add other links as needed */}
+                <Link to="/help" onClick={closeMobileMenu}>
+                    <FontAwesomeIcon icon={faQuestionCircle} className="icon" /> Help
+                </Link>
+                <Link to="/signup" onClick={closeMobileMenu} className="icon signup-btn">
+                    <FontAwesomeIcon icon={faUserPlus} /> Sign Up
+                </Link>
             </div>
         </nav>
     );
